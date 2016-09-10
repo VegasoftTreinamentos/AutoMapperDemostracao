@@ -1,0 +1,50 @@
+﻿@model AutoMapper.Demo.Models.Dominio.Pedido
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Pedido</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroPedido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroPedido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataCompra)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataCompra)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Entregar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Entregar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InternalId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InternalId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PedidoId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

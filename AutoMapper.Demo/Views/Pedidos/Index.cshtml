@@ -1,0 +1,76 @@
+﻿<div class="row">
+    <hr />
+</div>
+<div class="well">
+
+    @foreach (var item in Model)
+    {
+        <div class="row">
+            <div class="col-md-2">
+                Pedido: @item.NrPedido
+            </div>
+            <div class="col-md-5">
+                Cliente:<em> @item.NomeCliente</em>
+            </div>
+
+            <div class="col-md-3">
+                Total R$  @item.Total
+            </div>
+
+            <div class="col-md-2">
+                Entregar:  @item.Entregar
+            </div>
+        </div>
+
+
+
+        <div class="col-md-12">
+            <hr />
+            <dl>
+                <dt>
+                    <div class="col-md-5">
+                        <strong>Produto</strong>
+                    </div>
+                    <div class="col-md-1">
+                        <strong>Quantidade</strong>
+                    </div>
+
+                    <div class="col-md-1">
+                        <strong>Preço</strong>
+                    </div>
+                    <div class="col-md-2">
+                        <strong>Total</strong>
+                    </div>
+                </dt>
+
+                @foreach (var produto in item.LinhaPedido)
+                {
+                    <div class="row alert-info">
+                       
+                       
+                        <dd>
+                            <div class="col-md-5">
+                                @produto.Produto
+                            </div>
+                            <div class="col-md-1">
+                                @produto.Quantidade
+                            </div>
+
+                            <div class="col-md-1">
+                                @produto.Preco
+                            </div>
+                            <div class="col-md-2">
+                                R$.  @produto.PrecoTotal()
+                            </div>
+                        </dd>
+                    </div>
+
+                }
+            </dl>
+            <hr />
+        </div>
+
+    }
+
+
+</div>
